@@ -1,12 +1,14 @@
-import styles from "../styles/Home.module.css";
-import InstructionsComponent from "../components/InstructionsComponent";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './styles/theme';
+import GlobalStyle from './styles/GlobalStyles';
 
-export default function Home() {
-  return (
-    <div>
-      <main className={styles.main}>
-        <InstructionsComponent></InstructionsComponent>
-      </main>
-    </div>
-  );
-}
+ReactDOM.render(
+  <ThemeProvider theme={theme}>
+    <GlobalStyle />
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root')
+);
